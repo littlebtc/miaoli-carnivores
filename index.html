@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script src='https://api.tiles.mapbox.com/mapbox.js/v1.6.2/mapbox.js'></script>
+    <link href='https://api.tiles.mapbox.com/mapbox.js/v1.6.2/mapbox.css' rel='stylesheet' />
+  </head>
+  <body>
+    <div id="map" style="width: 100%; height: 100%; position: fixed; top: 0; left: 0;">
+    </div>
+    <script type="text/javascript">
+      var map = L.mapbox.map('map', 'littlebtc.i0i6bc5b');
+      var nlscLayer = L.tileLayer.wms('http://maps.nlsc.gov.tw/S_Maps/wms',
+      {
+        layers: 'LUIMAP',
+        format: 'image/png',
+        transparent: true
+      })
+    nlscLayer.setOpacity(0.3);
+    nlscLayer.addTo(map);
+    </script>
+  </body>
+</html>
